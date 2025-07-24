@@ -1,78 +1,117 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19976937&assignment_repo_type=AssignmentRepo)
-# Deployment and DevOps for MERN Applications
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+# MERN Stack Application Deployment
 
-## Assignment Overview
+This is a full-stack MERN application deployed with CI/CD, monitoring, and best practices.
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+---
 
-## Getting Started
+## 🔗 Deployed URLs
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+- **Frontend**: [https://your-frontend.vercel.app](https://your-frontend.vercel.app)
+- **Backend API**: [https://your-backend.onrender.com/api](https://your-backend.onrender.com/api)
 
-## Files Included
+---
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+## 🚀 Tech Stack
 
-## Requirements
+- React (Frontend)
+- Express.js (Backend)
+- MongoDB Atlas (Database)
+- Vercel (Frontend Hosting)
+- Render / Railway / Heroku (Backend Hosting)
+- GitHub Actions (CI/CD)
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+---
 
-## Deployment Platforms
+## 📦 Environment Variables
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+### Frontend `.env.example`
+```env
+REACT_APP_API_URL=https://your-backend-api-url.com/api
+REACT_APP_ENV=production
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
 
-## CI/CD Pipeline
+Task 1: Preparing the Application for Deployment
+React Frontend
+✅ Run npm run build to create optimized static assets
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+✅ Enable code splitting via React.lazy and Suspense for dynamic imports
 
-## Submission
+✅ Use .env.production and .env.development for environment-specific configs
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Express.js Backend
+✅ Add centralized error handling middleware
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+✅ Use helmet to secure HTTP headers (app.use(helmet()))
 
-## Resources
+✅ Configure .env and use dotenv for environment configs
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+✅ Add winston or morgan for structured logging
+
+✅ Use mongoose with poolSize option for connection pooling
+
+MongoDB Setup
+✅ Create a MongoDB Atlas cluster
+
+✅ Create dedicated users with scoped permissions (readWrite, etc.)
+
+✅ Enable connection pooling in your mongoose.connect options
+
+🚀 Task 2: Deploying the Backend
+✅ Choose Render, Railway, or Heroku and deploy your Express.js backend
+
+✅ Add .env variables in platform dashboard (e.g., MONGODB_URI, PORT)
+
+✅ Connect GitHub repo and enable auto-deploy
+
+✅ (Optional) Configure a custom domain
+
+✅ Enable HTTPS via platform settings or automatic SSL cert
+
+✅ Add platform or 3rd-party monitoring/logging (e.g., LogRocket, New Relic)
+
+🌐 Task 3: Deploying the Frontend
+✅ Choose Vercel, Netlify, or GitHub Pages
+
+✅ Set build command: npm run build, and publish directory: build/
+
+✅ Add .env variables like REACT_APP_API_URL
+
+✅ Connect GitHub and enable auto-deploy
+
+✅ Set custom domain (optional)
+
+✅ Ensure HTTPS is enabled
+
+✅ Add caching headers or use a service-worker.js for asset caching
+
+🔄 Task 4: CI/CD Pipeline Setup
+✅ Create .github/workflows/ci.yml
+
+✅ Use actions/setup-node, npm install, npm run test, and eslint
+
+✅ Automate build and test with each push/PR
+
+✅ Add deploy steps using CLI tools or platform GitHub integrations
+
+✅ Use separate branches/environments for staging and production
+
+✅ Add rollback mechanism (manual re-deploy, tagged releases, etc.)
+
+🔍 Task 5: Monitoring and Maintenance
+✅ Add health check endpoint (e.g., GET /health)
+
+✅ Use uptime monitoring tools (e.g., UptimeRobot)
+
+✅ Add error tracking (e.g., Sentry for frontend + backend)
+
+✅ Monitor performance (Lighthouse, Web Vitals, or New Relic)
+
+✅ Add server metrics monitoring (e.g., PM2, Datadog)
+
+✅ Backup strategy for MongoDB Atlas (daily backups enabled)
+
+✅ Maintain update log and patch routine
+
+✅ Document rollback procedures in the README
