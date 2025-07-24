@@ -12,7 +12,9 @@ This is a full-stack MERN application deployed with CI/CD, monitoring, and best 
 - **Backend API**: [https://your-backend.onrender.com/api](https://your-backend.onrender.com/api)
 
 ---
+frontend-ci.yml → Deploys to Netlify
 
+backend-ci.yml → Triggers deploy to Render
 ## 🚀 Tech Stack
 
 - React (Frontend)
@@ -157,5 +159,9 @@ Restore previous working deployment snapshot (Render/Vercel).
 Revert GitHub commit that caused the issue.
 
 Redeploy from stable branch.
+
+frontend-ci.yml → Deploys to Netlify
+
+backend-ci.yml → Triggers deploy to Render
 
 
