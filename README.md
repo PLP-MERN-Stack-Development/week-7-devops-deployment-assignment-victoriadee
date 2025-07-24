@@ -8,7 +8,7 @@ This is a full-stack MERN application deployed with CI/CD, monitoring, and best 
 
 ## 🔗 Deployed URLs
 
-- **Frontend**: [https://your-frontend.vercel.app](https://your-frontend.vercel.app)
+- **Frontend**: (https://tranquil-lily-626e3d.netlify.app/))
 - **Backend API**: [https://your-backend.onrender.com/api](https://your-backend.onrender.com/api)
 
 ---
