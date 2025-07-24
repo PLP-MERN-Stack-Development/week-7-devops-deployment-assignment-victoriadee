@@ -115,3 +115,47 @@ MongoDB Setup
 ✅ Maintain update log and patch routine
 
 ✅ Document rollback procedures in the README
+
+Backend .env.example
+
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+NODE_ENV=production
+🔄 CI/CD Pipeline
+CI/CD is implemented using GitHub Actions to run:
+
+Lint checks
+
+Automated tests (if present)
+
+Build checks
+
+📸 Screenshots:
+
+🧪 Monitoring Setup
+Health Check: GET /api/health
+
+Uptime Monitoring: UptimeRobot
+
+Error Tracking: Sentry.io
+
+Performance Monitoring: Lighthouse, Web Vitals
+
+🔁 Maintenance Plan
+Weekly dependency updates
+
+Daily MongoDB backups via Atlas
+
+Logging using Winston / Render Logs
+
+Documented rollback strategy using previous deploy snapshots
+
+📚 Rollback Strategy
+Restore previous working deployment snapshot (Render/Vercel).
+
+Revert GitHub commit that caused the issue.
+
+Redeploy from stable branch.
+
+
